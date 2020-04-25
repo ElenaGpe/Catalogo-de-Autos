@@ -1,10 +1,28 @@
-.header{
+.navigation{
+    list-style: none;
     text-align: center;
     background-color: #5edfff;
     height: 50px;
     width: 100%;
-
+    
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
+
+.navigation li{
+    flex-grow: 1; 
+    border-style: solid;
+    border-color: #49aec7;
+}
+    
+.navigation a {
+    text-decoration: none;
+    display: block;
+    padding: 1em;
+    color: black;
+  }
+  
+  .navigation a:hover {
+    background: #49aec7;
+  }
+  
