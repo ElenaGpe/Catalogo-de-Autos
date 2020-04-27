@@ -26,4 +26,9 @@ a {
 a:hover {
   background: #49aec7;
 }
+
+.activo{
+  border-style: double;
+  border-color: #49aec7;
+}
   
