@@ -1,3 +1,34 @@
 <div *ngFor='let auto of autos'>
-    <div class="list"><li><img src="../../assets/images/eye.svg"><a>{{auto.descripcion}}</a></li></div>
+    <div class="list">
+        <div class="items">
+            <div class="eye" (click)="onSelect(auto)" (click)="open(content)"><img src="../../assets/images/eye.svg"></div>
+            <div class="text">{{auto.descripcion}}</div>
+        </div>
+    </div>
 </div>
+
+<ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Detalles</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <label>Marca: {{autoSelect.marca}}</label><br/>
+          <label>Submarca: {{autoSelect.submarca}}</label><br/>
+          <label>Modelo: {{autoSelect.modelo}}</label><br/>
+          <label>Fecha de registro: {{autoSelect.fecha_registro}}</label><br/>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+  
+  <pre>{{ closeResult }}</pre>
+<!--
+  <div class="info"></div>
+    {{autoSelect.marca}} - {{autoSelect.submarca}} - {{autoSelect.modelo}} - {{autoSelect.fecha_registro}}
+</div>
+-->

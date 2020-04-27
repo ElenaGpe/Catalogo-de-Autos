@@ -7,18 +7,26 @@
     justify-content: center;
     align-items: center;
 
-    font-size: 20px;
+    font-size: 22px;
 
-    padding: 6px;
+    padding: 30px;
     margin-top: 20px;
 }
+
 img {
     float: left;
     margin-left: 15px;
     width: 45px;
     height: 45px;
+    opacity: 0.7;
 }
-li {
+
+img:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.items {
     text-align: right;
 
     border-style: double;
@@ -32,10 +40,10 @@ li {
     background-color: #b2fcff;
 }
 
-a{
+text {
     margin-right: 15px;
 }
-  
-li:hover {
-    background: #49aec7;
+
+.info {
+    text-align: center;
 }
