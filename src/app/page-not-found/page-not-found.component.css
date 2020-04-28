@@ -1,0 +1,23 @@
+.PNF {
+    text-align: center;
+}
+
+img {
+    position: relative;
+    width: 570px;
+    height: 400px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    color: #285cb4;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+    width: 50%;
+}
