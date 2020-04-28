@@ -1,0 +1,22 @@
+table{
+    width: 100%;
+    vertical-align: center;
+    border-collapse: collapse;
+    border: 2px solid #ecfcff;
+    background-color: #b2fcff;
+}
+
+th {
+    background-color: #5edfff;
+    height: 50px;
+    text-align: center;
+    border: 2px solid #ecfcff;
+}
+
+td{
+    border: 2px solid #ecfcff;
+}
+
+tr:hover {
+    background-color: #8fc8ca;
+}
