@@ -8,13 +8,14 @@ table{
 
 th {
     background-color: #5edfff;
-    height: 50px;
+    padding: 18px;
     text-align: center;
     border: 2px solid #ecfcff;
 }
 
 td{
     border: 2px solid #ecfcff;
+    font-size: small;
 }
 
 tr:hover {

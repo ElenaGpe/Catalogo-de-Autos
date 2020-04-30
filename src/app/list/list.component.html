@@ -2,7 +2,7 @@
     <div class="list">
         <div class="items">
             <div class="eye" (click)="onSelect(auto)" (click)="open(content)"><img src="../../assets/images/eye.svg"></div>
-            <div class="text">{{auto.descripcion}}</div>
+            <div class="text">{{auto.submarca}}, {{auto.modelos}}, {{auto.marca}}</div>
         </div>
     </div>
 </div>
@@ -19,8 +19,8 @@
         <div class="form-group">
           <label>Marca: {{autoSelect.marca}}</label><br/>
           <label>Submarca: {{autoSelect.submarca}}</label><br/>
-          <label>Modelo: {{autoSelect.modelo}}</label><br/>
-          <label>Fecha de registro: {{autoSelect.fecha_registro}}</label><br/>
+          <label>Modelos: {{autoSelect.modelos}}</label><br/>
+          <label>Descripción: {{autoSelect.descripcion}}</label><br/>
         </div>
       </form>
     </div>
