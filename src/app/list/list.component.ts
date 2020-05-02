@@ -16,6 +16,9 @@ export class YourAppModule {
 })
 
 export class ListComponent implements OnInit{
+  page= 1;
+  pageSize= 10;
+
   autos: Automovil[];
   autoSelect: Automovil;
 
@@ -52,4 +55,3 @@ export class ListComponent implements OnInit{
   }
   */
 }
-

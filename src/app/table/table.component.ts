@@ -10,6 +10,9 @@ import { AutosService } from '../autos.service';
 })
 
 export class TableComponent implements OnInit {
+  page= 1;
+  pageSize= 10;
+  
   autos: Automovil[];
   
   constructor(private modalService: NgbModal, private autosService: AutosService) {}

@@ -1,29 +1,31 @@
-<div *ngFor='let auto of autos'>
-    <div class="list">
-        <div class="items">
-            <div class="eye" (click)="onSelect(auto)" (click)="open(content)"><img src="../../assets/images/eye.svg"></div>
-            <div class="text">{{auto.submarca}}, {{auto.modelos}}, {{auto.marca}}</div>
-        </div>
+<div *ngFor="let auto of autos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+  <div class="list">
+    <div class="items">
+      <div class="eye" (click)="onSelect(auto)" (click)="open(content)"><img src="../../assets/images/eye.svg"></div>
+      <div class="text">{{auto.submarca}}, {{auto.modelos}}, {{auto.marca}}</div>
     </div>
+  </div>
 </div>
+  
+<br><br>
+<ngb-pagination class="d-flex justify-content-center" [collectionSize]= "autos.length" [(page)]= "page" [pageSize]= "pageSize" [boundaryLinks]="true"></ngb-pagination>
 
 <ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Detalles</h4>
-      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <form>
-        <div class="form-group">
-          <label>Marca: {{autoSelect.marca}}</label><br/>
-          <label>Submarca: {{autoSelect.submarca}}</label><br/>
-          <label>Modelos: {{autoSelect.modelos}}</label><br/>
-          <label>Descripción: {{autoSelect.descripcion}}</label><br/>
-        </div>
-      </form>
-    </div>
-  </ng-template>
-  
-  <pre>{{ closeResult }}</pre>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Detalles</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form>
+      <div class="form-group">
+        <label>Marca: {{autoSelect.marca}}</label><br/>
+        <label>Submarca: {{autoSelect.submarca}}</label><br/>
+        <label>Modelos: {{autoSelect.modelos}}</label><br/>
+        <label>Descripción: {{autoSelect.descripcion}}</label><br/>
+      </div>
+    </form>
+  </div>
+</ng-template>
+<pre>{{ closeResult }}</pre>
