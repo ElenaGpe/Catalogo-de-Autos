@@ -20,11 +20,11 @@
             <td>{{auto.submarca}}</td>
             <td>{{auto.modelos}}</td>
             <td>{{auto.descripcion}}</td>
-            <td><div><img src="../../assets/images/trash.svg"></div></td>
+            <td><div (click)="openModalEliminar(auto)"><img src="../../assets/images/trash.svg"></div></td>
             <td><div (click)="openModalEditar(auto)"><img src="../../assets/images/edit.svg"></div></td>
         </tr>
     </tbody>
 </table>
 
 <br>
-<ngb-pagination class="d-flex justify-content-center" [collectionSize]= "autos.length" [(page)]= "page" [pageSize]= "pageSize" [boundaryLinks]="true"></ngb-pagination>
+<ngb-pagination class="d-flex justify-content-center" [collectionSize]= "autos?.length" [(page)]= "page" [pageSize]= "pageSize" [boundaryLinks]="true"></ngb-pagination>

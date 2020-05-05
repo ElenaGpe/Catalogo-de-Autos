@@ -4,12 +4,13 @@ import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal',
-  templateUrl: './modalEditar.component.html',
-  styleUrls: ['./modalEditar.component.css']
+  templateUrl: './modalEditAdd.component.html',
+  styleUrls: ['./modalEditAdd.component.css']
 })
-export class ModalEditarComponent  {
+
+export class ModalEditAddComponent  {
   accion: string;
-  auto: Automovil[];
+  auto: Automovil = {} as Automovil;
 
   constructor(public activeModal: NgbActiveModal) { }
 

@@ -10,8 +10,9 @@ import { ListComponent } from './list/list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TableComponent } from './table/table.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ModalEditarComponent } from './modalEditar/modalEditar.component';
-import { ModalAgregarComponent } from './modal-agregar/modal-agregar.component';
+import { ModalEditAddComponent } from './modalEditAdd/modalEditAdd.component';
+import { FormsModule } from '@angular/forms';
+import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 
 @NgModule({
   declarations: [
@@ -21,17 +22,18 @@ import { ModalAgregarComponent } from './modal-agregar/modal-agregar.component';
     ListComponent,
     TableComponent,
     PageNotFoundComponent,
-    ModalEditarComponent,
-    ModalAgregarComponent,
+    ModalEditAddComponent,
+    ModalEliminarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [ModalEditarComponent, ModalAgregarComponent]
+  entryComponents: [ModalEditAddComponent]
 })
 export class AppModule { }

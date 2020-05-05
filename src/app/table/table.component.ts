@@ -2,8 +2,8 @@ import { Component, OnInit, NgModule } from '@angular/core';
 import { Automovil } from './models';
 import {NgbModule, ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { AutosService } from '../autos.service';
-import { ModalEditarComponent } from '../modalEditar/modalEditar.component';
-import { ModalAgregarComponent } from '../modal-agregar/modal-agregar.component';
+import { ModalEditAddComponent } from '../modalEditAdd/modalEditAdd.component';
+import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.component';
 
 @Component({
   selector: 'app-table',
@@ -14,9 +14,8 @@ import { ModalAgregarComponent } from '../modal-agregar/modal-agregar.component'
 export class TableComponent implements OnInit {
   page= 1;
   pageSize= 10;
-  
   autos: Automovil[];
-  
+
   constructor(private modalService: NgbModal, private autosService: AutosService) {}
 
   ngOnInit(): void {
@@ -27,14 +26,46 @@ export class TableComponent implements OnInit {
 
 
   openModalEditar(auto: Automovil){
-    const modalRef = this.modalService.open(ModalEditarComponent, {centered:true});
+    const modalRef = this.modalService.open(ModalEditAddComponent, {centered:true});
     modalRef.componentInstance.auto = auto;
     modalRef.componentInstance.accion = 'Editar';
+
+    modalRef.result.then(
+      (auto)=>{
+        this.autosService.updateAutos(auto).subscribe(response=>console.log(response));
+      },
+      (reason)=>{
+        console.log(reason)
+      }
+    )
   }
 
   openModalAgregar() {
-    const modalRef = this.modalService.open(ModalAgregarComponent, {centered:true});
+    const modalRef = this.modalService.open(ModalEditAddComponent, {centered:true});
     modalRef.componentInstance.accion = 'Agregar';
+
+    modalRef.result.then(
+      (auto)=>{
+        this.autosService.addAutos(auto).subscribe(response=>console.log(response));
+      },
+      (reason)=>{
+        console.log(reason)
+      }
+    )
+  }
+
+  openModalEliminar(auto: Automovil) {
+    const modalRef = this.modalService.open(ModalEliminarComponent, {centered:true});
+    modalRef.componentInstance.auto = auto;
+
+    modalRef.result.then(
+      (autoTemp)=>{
+        this.autosService.deleteAutos(autoTemp).subscribe(response=>console.log(response));
+      },
+      (reason)=>{
+        console.log(reason)
+      }
+    )
   }
 
 }

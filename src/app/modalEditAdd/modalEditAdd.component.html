@@ -5,29 +5,28 @@
   </button>
 </div>
 <div class="modal-body">
-    <form>
+    <form #formAutos = "ngForm">
         <div class="form-group">
           <label for="marca">Marca</label>
-          <input type="text" class="form-control" id="marca" placeholder="Ingresa la marca">
+          <input type="text" class="form-control" id="marca" placeholder="Ingresa la marca" [(ngModel)] = "auto.marca" name = "marca">
         </div>
 
         <div class="form-group">
           <label for="submarca">Submarca</label>
-          <input type="text" class="form-control" id="submarca" placeholder="Ingresa la submarca">
+          <input type="text" class="form-control" id="submarca" placeholder="Ingresa la submarca" [(ngModel)] = "auto.submarca" name = "submarca">
         </div>
 
         <div class="form-group">
           <label for="modelos">Modelos</label>
-          <input disabled class="form-control" type="text" class="form-control" id="modelos" placeholder="Ingresa los modelos">
+          <input type="text" class="form-control" id="modelos" placeholder="Ingresa los modelos" [(ngModel)] = "auto.modelos" name = "modelos">
         </div>
 
         <div class="form-group">
           <label for="descripcion">Descripción</label>
-          <input type="text" class="form-control" id="descripcion" placeholder="Ingresa la descripción">
+          <input type="text" class="form-control" id="descripcion" placeholder="Ingresa la descripción" [(ngModel)] = "auto.descripcion" name = "descripcion">
         </div>
       </form>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-primary" (click)="activeModal.close('Save')">Guardar</button>
-  <button type="button" class="btn btn-secondary" (click)="activeModal.close('Close')">Cerrar</button>
+  <button type="submit" class="btn btn-primary" (click)="activeModal.close(auto)">Guardar</button>
 </div>
