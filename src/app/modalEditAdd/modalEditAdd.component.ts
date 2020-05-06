@@ -13,11 +13,11 @@ export class ModalEditAddComponent  {
   accion: string;
   auto: Automovil = {} as Automovil;
 
-  value: number = 2000;
+  value: number = 2010;
   highValue: number = 2020;
   options: Options = {
     floor: 2000,
-    ceil: 2020
+    ceil: 2020,
   };
 
   constructor(public activeModal: NgbActiveModal) { }

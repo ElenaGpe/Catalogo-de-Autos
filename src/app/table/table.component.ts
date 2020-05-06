@@ -12,8 +12,8 @@ import { ModalEliminarComponent } from '../modal-eliminar/modal-eliminar.compone
 })
 
 export class TableComponent implements OnInit {
-  page= 1;
-  pageSize= 10;
+  page: number;
+  pageSize: number;
   autos: Automovil[];
 
   displayProgressBar: boolean; 
@@ -22,6 +22,8 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayProgressBar = true;
+    this.pageSize= 10;
+    this.page= +sessionStorage.getItem('currentPage');
     this.autosService.getAutos().subscribe((response)=>{
       setTimeout(() => {
         this.displayProgressBar = false;
@@ -38,7 +40,10 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then(
       (auto)=>{
-        this.autosService.updateAutos(auto).subscribe(response=>console.log(response));
+        this.autosService.updateAutos(auto).subscribe(value => {
+          sessionStorage.setItem('currentPage', this.page.toString());
+          this.ngOnInit();
+        });
       },
       (reason)=>{
         console.log(reason)
@@ -52,7 +57,10 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then(
       (auto)=>{
-        this.autosService.addAutos(auto).subscribe(response=>console.log(response));
+        this.autosService.addAutos(auto).subscribe(value => {
+          sessionStorage.setItem('currentPage', this.page.toString());
+          this.ngOnInit();
+        });
       },
       (reason)=>{
         console.log(reason)
@@ -66,7 +74,10 @@ export class TableComponent implements OnInit {
 
     modalRef.result.then(
       (autoTemp)=>{
-        this.autosService.deleteAutos(autoTemp).subscribe(response=>console.log(response));
+        this.autosService.deleteAutos(autoTemp).subscribe(value => {
+          sessionStorage.setItem('currentPage', this.page.toString());
+          this.ngOnInit();
+        });
       },
       (reason)=>{
         console.log(reason)
