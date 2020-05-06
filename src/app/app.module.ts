@@ -14,6 +14,7 @@ import { ModalEditAddComponent } from './modalEditAdd/modalEditAdd.component';
 import { FormsModule } from '@angular/forms';
 import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 import { Ng5SliderModule } from 'ng5-slider';
+import { FormatoModelosPipe } from './formato-modelos.pipe';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { Ng5SliderModule } from 'ng5-slider';
     PageNotFoundComponent,
     ModalEditAddComponent,
     ModalEliminarComponent,
+    FormatoModelosPipe,
   ],
   imports: [
     BrowserModule,

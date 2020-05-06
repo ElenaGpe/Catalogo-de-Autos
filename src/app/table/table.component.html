@@ -18,7 +18,7 @@
             <td>{{auto._id}}</td>
             <td>{{auto.marca}}</td>
             <td>{{auto.submarca}}</td>
-            <td>{{auto.modelos}}</td>
+            <td>{{auto.modelos | formatoModelos }}</td>
             <td>{{auto.descripcion}}</td>
             <td><div (click)="openModalEliminar(auto)"><img src="../../assets/images/trash.svg"></div></td>
             <td><div (click)="openModalEditar(auto)"><img src="../../assets/images/edit.svg"></div></td>
