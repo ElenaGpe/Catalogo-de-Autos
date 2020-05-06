@@ -1,3 +1,8 @@
+<br>
+<p *ngIf="displayProgressBar">
+  <ngb-progressbar type="info" [value]="100" [striped]= true [animated]= true></ngb-progressbar>
+</p>
+
 <div *ngFor="let auto of autos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
   <div class="list">
     <div class="items">

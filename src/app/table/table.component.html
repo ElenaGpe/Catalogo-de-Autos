@@ -1,6 +1,7 @@
 <br>
 <button type="button" class="btn btn-outline-primary" (click)="openModalAgregar()">Agregar</button>
 <br>
+
 <table class="table">
     <thead>
     <tr>
@@ -9,11 +10,14 @@
         <th scope="col">Submarca</th>
         <th scope="col">Modelos</th>
         <th scope="col">Descripción</th>
-        <th scope="col"> </th>
-        <th scope="col"> </th>
     </tr>
     </thead>
     <tbody>
+        <tr *ngIf="displayProgressBar">
+            <th colspan="5">
+                <ngb-progressbar type="info" [value]="100" [striped]= true [animated]= true></ngb-progressbar>
+            </th>
+        </tr>
         <tr *ngFor="let auto of autos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
             <td>{{auto._id}}</td>
             <td>{{auto.marca}}</td>
