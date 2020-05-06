@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Automovil } from './models';
 import {NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
+import { Options } from 'ng5-slider';
 
 @Component({
   selector: 'app-modal',
@@ -12,9 +13,14 @@ export class ModalEditAddComponent  {
   accion: string;
   auto: Automovil = {} as Automovil;
 
-  constructor(public activeModal: NgbActiveModal) { }
+  value: number = 2000;
+  highValue: number = 2020;
+  options: Options = {
+    floor: 2000,
+    ceil: 2020
+  };
 
-  
+  constructor(public activeModal: NgbActiveModal) { }
 
 
 }

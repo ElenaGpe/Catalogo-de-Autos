@@ -13,6 +13,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ModalEditAddComponent } from './modalEditAdd/modalEditAdd.component';
 import { FormsModule } from '@angular/forms';
 import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
+import { Ng5SliderModule } from 'ng5-slider';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.componen
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    Ng5SliderModule
   ],
   providers: [],
   bootstrap: [AppComponent],

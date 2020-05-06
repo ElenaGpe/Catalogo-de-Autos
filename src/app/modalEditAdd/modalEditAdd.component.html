@@ -8,17 +8,31 @@
     <form #formAutos = "ngForm">
         <div class="form-group">
           <label for="marca">Marca</label>
-          <input type="text" class="form-control" id="marca" placeholder="Ingresa la marca" [(ngModel)] = "auto.marca" name = "marca">
+          <input type="text" class="form-control" id="marca" placeholder="Ingresa la marca" [(ngModel)] = "auto.marca" name = "marca"
+          required minlength="4" #marca="ngModel">
         </div>
+
+        <div *ngIf="marca.invalid && (marca.dirty || marca.touched)">
+          <div *ngIf="marca.errors.minlength" class="alert alert-danger">La marca debe tener un mínimo de 4 caractéres</div>
+          <div *ngIf="marca.errors.required" class="alert alert-danger">La marca es requerida</div>
+        </div>
+
 
         <div class="form-group">
           <label for="submarca">Submarca</label>
-          <input type="text" class="form-control" id="submarca" placeholder="Ingresa la submarca" [(ngModel)] = "auto.submarca" name = "submarca">
+          <input type="text" class="form-control" id="submarca" placeholder="Ingresa la submarca" [(ngModel)] = "auto.submarca" name = "submarca"
+          required minlength="4" #submarca="ngModel">
+        </div>
+
+        <div *ngIf="submarca.invalid && (submarca.dirty || submarca.touched)">
+          <div *ngIf="submarca.errors.minlength" class="alert alert-danger">La submarca debe tener un mínimo de 4 caractéres</div>
+          <div *ngIf="submarca.errors.required" class="alert alert-danger">La submarca es requerida</div>
         </div>
 
         <div class="form-group">
           <label for="modelos">Modelos</label>
-          <input type="text" class="form-control" id="modelos" placeholder="Ingresa los modelos" [(ngModel)] = "auto.modelos" name = "modelos">
+          <!--<input type="text" class="form-control" id="modelos" placeholder="Ingresa los modelos" [(ngModel)] = "auto.modelos" name = "modelos">-->
+          <ng5-slider id="modelos" [(value)]="value" [(highValue)]="highValue" [options]="options" [(ngModel)] = "auto.modelos" name = "modelos"></ng5-slider>
         </div>
 
         <div class="form-group">
