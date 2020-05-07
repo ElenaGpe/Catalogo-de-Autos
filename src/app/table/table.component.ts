@@ -15,6 +15,7 @@ export class TableComponent implements OnInit {
   page: number;
   pageSize: number;
   autos: Automovil[];
+  searchText;
 
   displayProgressBar: boolean; 
 

@@ -32,3 +32,12 @@ img:hover {
     cursor: pointer;
     opacity: 1;
 }
+
+.input-group{
+    width: 30%;
+    margin: 10px;
+}
+
+.btn-outline-info{
+    margin-right: 30px;
+}

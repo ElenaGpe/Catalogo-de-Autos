@@ -1,6 +1,16 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <br>
-<button type="button" class="btn btn-outline-primary" (click)="openModalAgregar()">Agregar</button>
-<br>
+
+<div class="input-group">
+    <button type="button" class="btn btn-outline-info" (click)="openModalAgregar()">Agregar</button>
+    <div class="input-group-prepend">
+        <div class="input-group-text">
+            <i class="fa fa-search"></i>
+        </div>
+    </div>
+    <input type="text" class="form-control"id="inlineFormInputGroup" placeholder="Buscar"
+    [(ngModel)]="searchText" autocomplete="off">
+</div>
 
 <table class="table">
     <thead>
@@ -20,7 +30,7 @@
                 <ngb-progressbar type="info" [value]="100" [striped]= true [animated]= true></ngb-progressbar>
             </th>
         </tr>
-        <tr *ngFor="let auto of autos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
+        <tr *ngFor="let auto of autos | filter:searchText | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
             <td>{{auto._id}}</td>
             <td>{{auto.marca}}</td>
             <td>{{auto.submarca}}</td>
