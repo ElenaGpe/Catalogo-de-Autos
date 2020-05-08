@@ -15,7 +15,8 @@ import { FormsModule } from '@angular/forms';
 import { ModalEliminarComponent } from './modal-eliminar/modal-eliminar.component';
 import { Ng5SliderModule } from 'ng5-slider';
 import { FormatoModelosPipe } from './formato-modelos.pipe';
-import { Ng2SearchPipeModule } from 'ng2-search-filter'
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LogComponent } from './log/log.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter'
     PageNotFoundComponent,
     ModalEditAddComponent,
     ModalEliminarComponent,
-    FormatoModelosPipe
+    FormatoModelosPipe,
+    LogComponent
   ],
   imports: [
     BrowserModule,
