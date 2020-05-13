@@ -10,17 +10,35 @@ import { Options } from 'ng5-slider';
 })
 
 export class ModalEditAddComponent  {
-  accion: string;
-  auto: Automovil = {} as Automovil;
-
-  value: number = 2010;
-  highValue: number = 2020;
-  options: Options = {
-    floor: 2000,
-    ceil: 2020,
-  };
 
   constructor(public activeModal: NgbActiveModal) { }
 
+  accion: string;
+  auto: Automovil = {} as Automovil;
 
+  desde: number = 2018;
+  hasta: number = 2020;
+
+  options: Options = {
+    floor: 2000,
+    ceil: 2020,
+    step: 1,
+    showTicks: true
+  };
+
+  private ensamblajeModelos(): number[]{
+    let modelos: number[];
+    modelos = [];
+  
+  for(let cont = this.desde; cont<= this.hasta; cont++){
+    modelos.push(cont);
+    }
+    return modelos;
+  }
+
+  onSubmit(formAutos: any){
+    let modelos: number[]= this.ensamblajeModelos();
+    this.auto.modelos = modelos;
+    this.activeModal.close(this.auto);
+  }
 }

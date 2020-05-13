@@ -13,6 +13,7 @@ export class FormatoModelosPipe implements PipeTransform {
     if(cant==1||cant==2){
       return modelos;
     }
+    
     else{
       fixedValue = `[${modelos[0]}-${modelos[cant-1]}]`
       return fixedValue;

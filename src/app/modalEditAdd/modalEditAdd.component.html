@@ -32,15 +32,15 @@
         <div class="form-group">
           <label for="modelos">Modelos</label>
           <!--<input type="text" class="form-control" id="modelos" placeholder="Ingresa los modelos" [(ngModel)] = "auto.modelos" name = "modelos">-->
-          <ng5-slider id="modelos" [(value)]="value" [(highValue)]="highValue" [options]="options" [(ngModel)] = "auto.modelos" name = "modelos"></ng5-slider>
+          <ng5-slider id="modelos" [(value)]="desde" [(highValue)]="hasta" [options]="options"></ng5-slider>
         </div>
 
         <div class="form-group">
           <label for="descripcion">Descripción</label>
           <input type="text" class="form-control" id="descripcion" placeholder="Ingresa la descripción" [(ngModel)] = "auto.descripcion" name = "descripcion">
         </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-primary" [disabled]="!formAutos.form.valid" (click)="onSubmit(formAutos)">Guardar</button>
+        </div>
       </form>
-</div>
-<div class="modal-footer">
-  <button type="submit" class="btn btn-primary" [disabled]="!formAutos.form.valid" (click)="activeModal.close(auto)">Guardar</button>
 </div>

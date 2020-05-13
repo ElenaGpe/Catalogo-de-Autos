@@ -6,7 +6,7 @@
 <div *ngFor="let auto of autos | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize">
   <div class="list">
     <div class="items">
-      <div class="eye" (click)="onSelect(auto)" (click)="open(content)"><img src="../../assets/images/eye.svg"></div>
+      <div class="eye" (click)="onSelect(auto)" (click)="open(content)"><img src="assets/images/eye.svg"></div>
       <div class="text">{{auto.submarca}}, {{auto.modelos}}, {{auto.marca}}</div>
     </div>
   </div>
